@@ -1,32 +1,27 @@
 package org.example.apisNioIO;
 
-import java.io.File;
-import java.util.List;
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner=new Scanner(System.in);
         ManageFiles manageFiles=new ManageFiles();
+        Scanner scanner=new Scanner(System.in);
         int opt;
         do {
-            System.out.println("""
-                    1-> Crear Ficheros IO
-                    2-> Ver rutas absolutas IO
-                    3-> Crear ficheros NIO
-                    4-> Ver rutas absolutas NIO
-                    """);
-
+            System.out.println("MENU");
+            System.out.println("1) Crear archivos IO");
+            System.out.println("2) Mostrar rutas absolutas archivos IO");
+            System.out.println("3) Para salir");
             opt=scanner.nextInt();
             scanner.nextLine();
-
             switch (opt){
-                case 1:
-                    manageFiles.createFileIO()
-
-                1manageFiles.createFileIO();
+                case 1 -> manageFiles.createFileIO();
+                case 2 -> manageFiles.routeAbsoluteIO();
+                case 3 -> System.out.println("Hasta pronto...");
+                default -> System.out.println("Opcion invalida");
             }
-        }while ()
+        }while (opt!=3);
 
 
     }

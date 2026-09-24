@@ -2,26 +2,45 @@ package org.example.apisNioIO;
 
 
 import java.io.*;
-import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.List;
 
 public class ManageFiles {
 
-    public void createFileIO(){
-        File file=new File("/tmp/acceso/introduccion.txt");
-        file.mkdir();
-        
-    }
-    public void routeAbsoluteIO(){
+    private static final String[] IO_RUTS = {
+            "programacion/prueba.txt"
+    };
+
+    private static final String[] NIO_RUTS = {
+
+    };
 
 
-        files.forEach(file -> System.out.println(file.getAbsoluteFile()));
+    public void createFileIO() {
+        for (String r : IO_RUTS) {
+            try {
+                File archive = new File(r);
+                if (archive.getParentFile() != null) {
+                    archive.getParentFile().mkdirs();
+                }
+                archive.createNewFile();
+            } catch (IOException e) {
+                System.out.println("Error en la creacion de los archivos");
+            }
+        }
     }
-    public void createFileNIO(){
+
+    public void routeAbsoluteIO() {
+        for (String r : IO_RUTS) {
+            File archive = new File(r);
+            System.out.println("- " + archive.getAbsolutePath());
+        }
 
     }
-    public void routeAbsoluteNIO(){
+
+    public void createFileNIO() {
+
+    }
+
+    public void routeAbsoluteNIO() {
 
     }
 

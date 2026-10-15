@@ -21,6 +21,7 @@ public class ManageFiles {
                 if (archive.getParentFile() != null) {
                     archive.getParentFile().mkdirs();
                 }
+                if (!archive.exists())
                 archive.createNewFile();
             } catch (IOException e) {
                 System.out.println("Error en la creacion de los archivos");
